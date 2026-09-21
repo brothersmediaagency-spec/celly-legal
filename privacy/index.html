@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Celly Privacy Policy</title>
-<meta name="description" content="Privacy Policy for the Celly app by Eftel Studio. Last updated 19 September 2026.">
+<meta name="description" content="Privacy Policy for the Celly app by Eftel Studio. Last updated 21 September 2026.">
 <style>
   :root { color-scheme: light; }
   * { box-sizing: border-box; }
@@ -39,7 +39,7 @@
 <a class="back" href="../">← Celly legal</a>
 
 <h1>Celly Privacy Policy</h1>
-<p class="updated">Last updated: 20 September 2026</p>
+<p class="updated">Last updated: 21 September 2026</p>
 
 <p>This policy explains what the Celly mobile application collects, why, where it goes, and what you can ask us to do about it. It describes the app as it actually behaves, not as a general template.</p>
 
@@ -111,8 +111,10 @@ Italy<br>
 <p>If you allow it, Celly uses your location to show weather conditions relevant to your skin, such as UV index, humidity and temperature.</p>
 <ul>
 <li>On iOS, Celly requests <strong>reduced (approximate) location accuracy by default</strong>. It does not ask for precise location.</li>
-<li>Before sending anything, Celly <strong>rounds your coordinates to two decimal places</strong>. What reaches the weather provider, Open-Meteo, is therefore <strong>coarse location</strong> — roughly the area you are in, not where you are.</li>
-<li>The request to Open-Meteo carries <strong>no account identifier</strong>.</li>
+<li>Celly uses your approximate location only <strong>while the app is in use</strong>. It does not use background location.</li>
+<li>Before sending anything, Celly <strong>rounds your coordinates to two decimal places</strong>. What leaves your device is therefore <strong>coarse location</strong> — roughly the area you are in, not where you are.</li>
+<li>Those coarse coordinates are sent to <strong>Celly's own backend</strong>. Your device does not contact the weather provider directly. Our backend then requests environmental information — such as temperature, humidity and UV/weather conditions — from <strong>MET Norway</strong> (the Norwegian Meteorological Institute).</li>
+<li>The request carries <strong>no account identifier</strong>.</li>
 <li>Celly does <strong>not store any location history</strong>. Your coordinates are used to make one weather request and are not saved to our backend.</li>
 <li>To display the name of your area, Celly asks <strong>Apple's system geocoding service</strong> to turn coordinates into a place name. This runs through iOS system services, which means Apple's systems may receive location data under Apple's own privacy terms.</li>
 <li>You can refuse or withdraw location permission at any time in your device settings. The weather card simply disappears.</li>
@@ -157,7 +159,7 @@ Italy<br>
 <tr><td>Apple</td><td>App distribution, billing, sign-in, system geocoding</td><td>Payment details (never shared with us), sign-in tokens, location for geocoding</td></tr>
 <tr><td>Google / ML Kit</td><td>On-device face detection and text recognition; optional Google sign-in</td><td>Component diagnostics not linked to you; for sign-in, your email address</td></tr>
 <tr><td>Open Food Facts</td><td>Public food and product database</td><td>A scanned barcode, with no account identifier</td></tr>
-<tr><td>Open-Meteo</td><td>Weather forecast data</td><td>Coordinates rounded to two decimal places, with no account identifier</td></tr>
+<tr><td>MET Norway (Norwegian Meteorological Institute)</td><td>Weather and environmental forecast data, requested by Celly's backend</td><td>Coordinates rounded to two decimal places, with no account identifier</td></tr>
 </table>
 </div>
 <p>These providers operate their own infrastructure, which may be located outside Italy or the European Economic Area. Where information is transferred outside the EEA, it is done on the basis of the safeguards those providers make available, such as the European Commission's standard contractual clauses.</p>
