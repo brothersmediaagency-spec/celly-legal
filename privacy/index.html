@@ -4,7 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Celly Privacy Policy</title>
-<meta name="description" content="Privacy Policy for the Celly app by Eftel Studio. Last updated 21 September 2026.">
+<meta name="description" content="Privacy Policy for the Celly app by Eftel Studio. Last updated 1 October 2026.">
+<link rel="canonical" href="https://brothersmediaagency-spec.github.io/celly-legal/privacy/">
+<link rel="alternate" hreflang="en" href="https://brothersmediaagency-spec.github.io/celly-legal/privacy/">
+<link rel="alternate" hreflang="it" href="https://brothersmediaagency-spec.github.io/celly-legal/privacy/it/">
+<link rel="alternate" hreflang="x-default" href="https://brothersmediaagency-spec.github.io/celly-legal/privacy/">
 <style>
   :root { color-scheme: light; }
   * { box-sizing: border-box; }
@@ -14,8 +18,13 @@
     -webkit-text-size-adjust: 100%;
   }
   .wrap { max-width: 720px; margin: 0 auto; padding: 40px 20px 80px; }
-  .back { display: inline-block; margin-bottom: 28px; font-size: 0.92rem; color: #5a5a5a; text-decoration: none; }
+  .topbar { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 28px; }
+  .back { font-size: 0.92rem; color: #5a5a5a; text-decoration: none; }
   .back:hover { color: #1a1a1a; }
+  .lang { font-size: 0.92rem; color: #5a5a5a; white-space: nowrap; }
+  .lang a { color: #5a5a5a; text-decoration: none; }
+  .lang a:hover { color: #1a1a1a; }
+  .lang [aria-current] { color: #1a1a1a; font-weight: 600; }
   h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 6px; letter-spacing: -0.01em; }
   .updated { color: #5a5a5a; font-size: 0.92rem; margin: 0 0 8px; }
   h2 { font-size: 1.18rem; margin: 40px 0 10px; line-height: 1.35; }
@@ -36,10 +45,13 @@
 </head>
 <body>
 <div class="wrap">
+<div class="topbar">
 <a class="back" href="../">← Celly legal</a>
+<span class="lang"><a href="it/" hreflang="it" lang="it">Italiano</a> · <span aria-current="page">English</span></span>
+</div>
 
 <h1>Celly Privacy Policy</h1>
-<p class="updated">Last updated: 21 September 2026</p>
+<p class="updated">Last updated: 1 October 2026</p>
 
 <p>This policy explains what the Celly mobile application collects, why, where it goes, and what you can ask us to do about it. It describes the app as it actually behaves, not as a general template.</p>
 
@@ -62,10 +74,11 @@ Italy<br>
 <h2>Your Celly account</h2>
 <ul>
 <li>When you start using Celly, the app may automatically create an <strong>anonymous account</strong> with our backend provider, Supabase. It has no name, email or password attached — it exists so your data has an owner.</li>
-<li>You can optionally <strong>sign in with Apple or with Google</strong>, which links a permanent identity to that account so you can recover your data. This is optional; Celly works without it.</li>
+<li>You can optionally <strong>sign in with Apple or with Google</strong>, which links a permanent identity to that same account so you can recover your data. This is optional; Celly works without it.</li>
 <li>The Supabase user ID (UID) is the identifier Celly uses for your account throughout the service.</li>
 <li><strong>We never receive or store your Apple or Google password.</strong> Those providers verify you and hand Celly a token; the password never passes through the app or our systems.</li>
-<li>If you sign in with Apple or Google, we receive your <strong>email address</strong>, which is stored with your account. When you sign in with Apple you may choose Apple's private relay address instead of your real one.</li>
+<li>If you sign in with Apple or Google, we receive your <strong>email address</strong>, which is stored with your account. When you sign in with Apple you may choose Apple's private relay address instead of your real one. Celly asks Apple only for your email address. When you sign in with Google, our authentication provider also records the basic profile details Google includes in its sign-in token, such as the name and profile-picture link of that Google account.</li>
+<li>You can sign out from the Profile screen. Signing out does not delete your account or its data.</li>
 </ul>
 
 <h2>Profile information you give us</h2>
@@ -92,7 +105,8 @@ Italy<br>
 <li>Face analysis runs <strong>on your device</strong>, using Google ML Kit's on-device face detection. The analysis does not require an internet connection to inspect the image.</li>
 <li><strong>Your face images are never uploaded to Celly or to our backend.</strong> No photograph of you is transmitted to us or stored on our servers.</li>
 <li>Celly does <strong>not</strong> perform biometric identification. It does not build a faceprint, it cannot recognise you from a face, and it does not attempt to match you against anyone else.</li>
-<li>Scan images and any profile photo you choose may be stored <strong>locally</strong>, inside the app's own private storage area on your device, so you can compare results over time. Deleting the app removes them.</li>
+<li>Scan images, progress photos you take during a cycle and any profile photo you choose may be stored <strong>locally</strong>, inside the app's own private storage area on your device, so you can compare results over time. Deleting the app removes them.</li>
+<li>Your face-scan history — the estimated readings each scan produced — is kept on your device. Our backend records only whether you have completed a face scan, and diary entries may record the estimated skin readings shown before and after an entry.</li>
 <li>Temporary frames captured while the camera guides you through a scan are written to the app's temporary storage and removed when they are no longer needed.</li>
 </ul>
 
@@ -107,6 +121,14 @@ Italy<br>
 <li><strong>No Celly account identifier is sent with that lookup.</strong> Open Food Facts receives a product code and nothing that identifies you.</li>
 </ul>
 
+<h2>Product analysis</h2>
+<p>To describe a scanned product, Celly sends the product's own details — its barcode and composition, such as name, brand, category, ingredients, nutrition values and on-pack claims — together with the language of the app, to <strong>Celly's own backend</strong>. The request is made from your signed-in Celly session.</p>
+<ul>
+<li>If that product has not been analysed before, our backend sends <strong>those product details only</strong> to <strong>OpenAI</strong>, which generates a general description of the product's composition. OpenAI does <strong>not</strong> receive your account ID, your email, your profile, your skin information, your diary or any photograph.</li>
+<li>The resulting product description is stored in our backend and <strong>reused for anyone who scans the same product</strong>. It describes the product, not you, and is not linked to your account.</li>
+<li>The <strong>personalised score</strong> you see — how a product fits your profile — is calculated <strong>on your device</strong> from that product description and your profile.</li>
+</ul>
+
 <h2>Location and weather</h2>
 <p>If you allow it, Celly uses your location to show weather conditions relevant to your skin, such as UV index, humidity and temperature.</p>
 <ul>
@@ -114,8 +136,8 @@ Italy<br>
 <li>Celly uses your approximate location only <strong>while the app is in use</strong>. It does not use background location.</li>
 <li>Before sending anything, Celly <strong>rounds your coordinates to two decimal places</strong>. What leaves your device is therefore <strong>coarse location</strong> — roughly the area you are in, not where you are.</li>
 <li>Those coarse coordinates are sent to <strong>Celly's own backend</strong>. Your device does not contact the weather provider directly. Our backend then requests environmental information — such as temperature, humidity and UV/weather conditions — from <strong>MET Norway</strong> (the Norwegian Meteorological Institute).</li>
-<li>The request carries <strong>no account identifier</strong>.</li>
-<li>Celly does <strong>not store any location history</strong>. Your coordinates are used to make one weather request and are not saved to our backend.</li>
+<li>The request to MET Norway carries <strong>no account identifier</strong>, and our backend does not associate your coordinates with your account.</li>
+<li>Celly does <strong>not store any location history</strong>. Your coordinates are not saved to our database. To avoid repeating identical requests, our backend may briefly keep the forecast for a rounded area in temporary memory, without any link to who asked for it.</li>
 <li>To display the name of your area, Celly asks <strong>Apple's system geocoding service</strong> to turn coordinates into a place name. This runs through iOS system services, which means Apple's systems may receive location data under Apple's own privacy terms.</li>
 <li>You can refuse or withdraw location permission at any time in your device settings. The weather card simply disappears.</li>
 </ul>
@@ -125,10 +147,10 @@ Italy<br>
 
 <h2>Subscriptions</h2>
 <ul>
-<li>Celly Premium is sold through the <strong>Apple App Store</strong>. Apple handles the payment. <strong>We never see your payment card, bank details or billing address.</strong></li>
-<li>We use <strong>RevenueCat</strong> to know whether your subscription is active, renewed, cancelled or refunded, so the app can unlock the right features.</li>
-<li>The identifier RevenueCat holds for you is your <strong>Supabase UID</strong> — the same Celly account ID described above — together with your purchase and entitlement status.</li>
-<li><strong>Deleting your Celly account does not cancel your Apple subscription.</strong> Apple bills you, so only Apple can stop the billing. See <em>Deleting your account</em>.</li>
+<li>Celly Premium is sold through the <strong>Apple App Store</strong> on iPhone and through <strong>Google Play</strong> on Android. The store handles the payment. <strong>We never see your payment card, bank details or billing address.</strong></li>
+<li>We use <strong>RevenueCat</strong> to know whether your subscription or free trial is active, renewed, cancelled or refunded, so the app can unlock the right features. On Android, purchases are also started through RevenueCat's software, which hands them to Google Play.</li>
+<li>The identifier RevenueCat holds for you is your <strong>Supabase UID</strong> — the same Celly account ID described above — together with your purchase, trial and entitlement status and the technical store information needed to verify purchases.</li>
+<li><strong>Deleting your Celly account does not cancel your subscription.</strong> Apple or Google bills you, so only the store can stop the billing. See <em>Deleting your account</em>.</li>
 </ul>
 
 <h2>Analytics and diagnostics</h2>
@@ -144,44 +166,54 @@ Italy<br>
 </ul>
 <p>The separate diagnostic telemetry produced by Google ML Kit is described above.</p>
 
+<h2>Technical logs</h2>
+<p>Like any online service, our backend provider and the other providers listed below automatically record technical information when the app connects to them — such as the IP address of the connection, the time of the request, the address requested and whether it succeeded. These logs are used to operate, secure and troubleshoot the service. They are kept for the period set by each provider's own log retention and are not used to build a profile of you.</p>
+
+<h2>App updates</h2>
+<p>Celly uses <strong>Shorebird</strong> to deliver small corrections to the app without a full store update. When the app starts, it may ask Shorebird's servers whether a correction is available for the installed version. That request contains technical information — such as the app version, the device platform and processor type, and a random identifier generated by the update component — and, like any connection, your IP address. It does <strong>not</strong> contain your Celly account ID, your profile or your diary.</p>
+
 <h2>Notifications</h2>
 <p>Reminders are scheduled and delivered <strong>locally by your device</strong>. Celly does not currently use a remote push notification service for these reminders, which means no message content travels through a push server for them. You can turn notifications off in your device settings.</p>
 
 <h2>Artificial intelligence</h2>
-<p>Celly's external AI compatibility feature is <strong>disabled by default</strong> and is not active in the published app. Your profile, diary, photographs and answers are <strong>not</strong> currently sent to any external generative-AI provider. If that ever changes, this policy will be updated before the feature is switched on.</p>
+<p>Celly uses an external AI provider, <strong>OpenAI</strong>, only for the product analysis described above, and only with product details. Your profile, skin information, diary, photographs and answers are <strong>not</strong> sent to OpenAI or to any other external generative-AI provider.</p>
+<p>Celly's personalised AI compatibility feature, which would use your profile, is <strong>disabled</strong> and is not active in the published app. If that ever changes, this policy will be updated before the feature is switched on.</p>
 
 <h2>Who else is involved</h2>
 <div class="scroll">
 <table>
 <tr><th>Service</th><th>Role</th><th>What it receives</th></tr>
-<tr><td>Supabase</td><td>Our backend: database, authentication and storage</td><td>Your account ID, profile, diary, cycles and product events</td></tr>
-<tr><td>RevenueCat</td><td>Subscription and entitlement status</td><td>Your account ID and purchase status</td></tr>
+<tr><td>Supabase</td><td>Our backend: database, authentication, server functions and storage</td><td>Your account ID, sign-in email, profile, diary, cycles, product events, coarse coordinates for weather requests, and technical logs</td></tr>
+<tr><td>RevenueCat</td><td>Subscription, trial and entitlement status; purchases on Android</td><td>Your account ID, purchase status and technical store information</td></tr>
 <tr><td>Apple</td><td>App distribution, billing, sign-in, system geocoding</td><td>Payment details (never shared with us), sign-in tokens, location for geocoding</td></tr>
-<tr><td>Google / ML Kit</td><td>On-device face detection and text recognition; optional Google sign-in</td><td>Component diagnostics not linked to you; for sign-in, your email address</td></tr>
+<tr><td>Google</td><td>Android distribution and billing through Google Play; on-device face detection and text recognition (ML Kit); optional Google sign-in</td><td>Payment details (never shared with us); component diagnostics not linked to you; for sign-in, your email address and basic Google profile details</td></tr>
+<tr><td>OpenAI</td><td>Generating general product descriptions, requested by Celly's backend</td><td>Product details only (barcode and composition), with no account identifier or personal information</td></tr>
 <tr><td>Open Food Facts</td><td>Public food and product database</td><td>A scanned barcode, with no account identifier</td></tr>
 <tr><td>MET Norway (Norwegian Meteorological Institute)</td><td>Weather and environmental forecast data, requested by Celly's backend</td><td>Coordinates rounded to two decimal places, with no account identifier</td></tr>
+<tr><td>Shorebird</td><td>Delivery of app corrections</td><td>App version and device platform information, a random update identifier and your IP address; no account identifier</td></tr>
 </table>
 </div>
-<p>These providers operate their own infrastructure, which may be located outside Italy or the European Economic Area. Where information is transferred outside the EEA, it is done on the basis of the safeguards those providers make available, such as the European Commission's standard contractual clauses.</p>
+<p>These providers operate their own infrastructure, which may be located outside Italy or the European Economic Area — for example in the United States. Where information is transferred outside the EEA, it is done on the basis of the safeguards those providers make available, such as the European Commission's standard contractual clauses or an adequacy decision.</p>
 
 <h2>Why we are allowed to process your information</h2>
 <p>Where the GDPR applies, we rely on the following:</p>
 <ul>
 <li><strong>Performance of a contract</strong> (Article 6(1)(b)) — creating and maintaining your account, storing your profile, diary and cycles, delivering the features you asked for, and unlocking a subscription you bought.</li>
-<li><strong>Legitimate interests</strong> (Article 6(1)(f)) — keeping the service working and secure, and understanding in aggregate how features are used so we can improve them. You can object to this at any time using the contact address above.</li>
+<li><strong>Legitimate interests</strong> (Article 6(1)(f)) — keeping the service working and secure, delivering app corrections, keeping technical logs, and understanding in aggregate how features are used so we can improve them. You can object to this at any time using the contact address above.</li>
 <li><strong>Your own decision to provide it</strong> — the cosmetic skin profile described above exists only because you chose to enter it, and we use it solely to operate the features you are using. If you would prefer us not to hold it, delete your account and it is removed.</li>
 </ul>
 <p>Celly does not collect special-category data as defined by Article 9 of the GDPR, and therefore does not ask for the separate explicit consent that such data would require. If that ever changes, this policy will be updated and consent will be requested before any such information is collected.</p>
 
 <h2>How long we keep it</h2>
 <p>We keep your information for as long as your Celly account exists. When you delete your account, the associated data is removed from our backend as part of that process. We do not apply a fixed retention period beyond that, and we are not stating one here that we have not implemented.</p>
-<p>Providers listed above keep their own records under their own retention rules — for example, Apple retains transaction records for its own accounting and legal obligations, independently of us.</p>
+<p>Product descriptions generated for a product are not personal data and are kept so they can be reused. Providers listed above keep their own records under their own retention rules — for example, Apple and Google retain transaction records for their own accounting and legal obligations, independently of us, and RevenueCat keeps the purchase history linked to your former account ID until we ask it to delete it.</p>
 
 <h2>Deleting your account</h2>
 <p>In the app: <strong>Profile → Delete account</strong>.</p>
-<p>After you confirm, the request is sent to our backend, which deletes your profile, diary entries, regeneration cycles, product events and the other records held against your account, and then deletes the account itself. Only once the server confirms the deletion does the app clear the copy held on your device. If the server cannot complete the deletion, nothing is removed and the app tells you so, so you can try again.</p>
+<p>After you confirm, the request is sent to our backend, which deletes your profile, diary entries, regeneration cycles, product events and the other records held against your account, and then deletes the account itself, including the sign-in email linked to it. Only once the server confirms the deletion does the app clear the copy held on your device. If the server cannot complete the deletion, nothing is removed and the app tells you so, so you can try again.</p>
+<p>Deleting your account in the app does not automatically remove the purchase record RevenueCat holds for your former account ID. If you want that removed too, write to <a href="mailto:cellyskinfood@gmail.com">cellyskinfood@gmail.com</a> and we will ask RevenueCat to delete it.</p>
 <div class="note">
-<p><strong>Deleting your Celly account does not cancel your Apple subscription.</strong> Apple charges you, and only Apple can stop it. Cancel it yourself in <em>Settings → your name → Subscriptions</em> on your device, or through the App Store. If you delete your Celly account without cancelling, Apple will keep billing you.</p>
+<p><strong>Deleting your Celly account does not cancel your subscription.</strong> The store charges you, and only the store can stop it. On iPhone, cancel in <em>Settings → your name → Subscriptions</em> or through the App Store. On Android, cancel in the Google Play Store under <em>Payments &amp; subscriptions → Subscriptions</em>. If you delete your Celly account without cancelling, the store will keep billing you.</p>
 </div>
 
 <h2>Resetting the app is not the same thing</h2>
@@ -206,6 +238,8 @@ Italy<br>
 
 <h2>Changes to this policy</h2>
 <p>If this policy changes, the new version is published at this address and the date at the top is updated. Where a change materially affects how your information is used, we will say so in the app.</p>
+
+<p>The rules for using Celly, including subscriptions, are in the <a href="../terms/">Terms of Use</a>. This policy is also available in <a href="it/" hreflang="it" lang="it">Italian</a>. Both versions describe the same practices.</p>
 
 <hr>
 <footer>
